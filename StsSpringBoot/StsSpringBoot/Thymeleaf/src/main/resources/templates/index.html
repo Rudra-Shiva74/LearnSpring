@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Home</title>
+</head>
+
+<body>
+
+
+	<h1>This is index page</h1>
+	<table th:fragment="footer2">
+		<thead>
+			<tr>
+				<th>Friend</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--<tr th:if="${frnd.empty}">
+				<td> No friend you have</td>
+			</tr>-->
+			<tr th:each="frnd:${arr}">
+				<td th:text="${frnd}"></td>
+			</tr>
+		</tbody>
+
+		<tbody>
+			<!--	<tr th:if="${frnd.empty}">
+				<td> No friend you have</td>
+			</tr>-->
+			<tr th:each="frnd,status:${frnd}">
+				<td th:text="${frnd}" th:style="${status.odd}?'color:red'"></td>
+			</tr>
+		</tbody>
+
+		<tbody>
+			<!--<tr th:if="${map.empty}">
+				<td> No friend you have</td>
+			</tr>-->
+			<tr th:each="frnd,status:${map}">
+				<td><span
+						th:text="${status.index}+' '+${status.count}+' '+${status.size}+' '+${status.first}+' '+${status.last}+' '+${frnd.value}"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

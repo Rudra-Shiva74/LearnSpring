@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>About</title>
+</head>
+
+<body>
+	<h1>This is about page</h1>
+	<h1 th:text="${name}"></h1>
+	<h2>name of the owner is <span th:text="${name}"></span> </h2>
+	<h2>length of the owner name is <span th:text="${#strings.length(name)}"></span> </h2>
+	<h2>name of the owner is <span th:text="${#strings.toLowerCase(name)}">aa</span> </h2>
+
+	<div th:with="a=45,b=56,n=${name}">
+		<h1 th:text="hhhhhhhhh+${a}"></h1>
+		<h1 th:text="${b}"></h1>
+		<h1 th:text="${n}"></h1>
+		<h1>sum of a and b is<span th:text="${a+b}"></span></h1>
+
+	</div>
+	<h1 th:text="${a}"></h1>
+	<h1 th:text="${b}"></h1>
+	<h1 th:text="${n}"></h1>
+	<table th:replace="index::footer2"></table>
+
+</body>
+
+</html>
